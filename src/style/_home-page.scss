@@ -1,0 +1,34 @@
+.home_page {
+  position: relative;
+  width: 100%;
+  height: 200vh;
+  display: flex;
+
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url("./images/background/ground.png");
+      height: 300px;
+      bottom: -150px;
+      left: 0;
+      z-index: 10;
+    }
+  }
+}
+
+.home_page__container::after {
+
+}

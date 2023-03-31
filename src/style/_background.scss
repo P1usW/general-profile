@@ -1,0 +1,35 @@
+$background-url: ('base': url('./images/background/layer-base.png'),
+                  'middle': url('./images/background/layer-middle.png'),
+                  'front': url('./images/background/layer-front.png'));
+$z: 0;
+
+
+.background {
+  color: #08FDD8;
+  @each $name, $url in $background-url {
+    &-#{$name} {
+      background-image: $url;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      z-index: $z;
+      width: 100%;
+      height: 100%;
+      //transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+      will-change: transform;
+    }
+    $z: $z + 1;
+  }
+}
+
+.background-title {
+  text-align: center;
+  text-shadow: 0 0 15px #9d822b;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: white;
+  position: absolute;
+  //transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+  z-index: 1;
+}
